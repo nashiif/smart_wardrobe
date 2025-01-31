@@ -1,0 +1,24 @@
+{% extends 'wardrobe/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Welcome Admin</h1>
+    <!-- Admin specific content -->
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Users</h5>
+
+                    <div class="row mt-5">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="{% url 'list_users' %}" class="btn btn-primary">View Users</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+</div>
+{% endblock %}

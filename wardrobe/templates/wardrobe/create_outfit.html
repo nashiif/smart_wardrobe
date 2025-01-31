@@ -1,0 +1,39 @@
+{% extends 'wardrobe/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Outfit Suggestions</h2>
+    <div class="row">
+        {% for outfit in outfits %}
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    {% if outfit.top %}
+                    <h5 class="card-title">Top: {{ outfit.top.name }}</h5>
+                    <img src="{{ outfit.top.image.url }}" class="card-img-top mb-2" alt="{{ outfit.top.name }}">
+                    {% endif %}
+                    
+                    {% if outfit.bottom %}
+                    <h5 class="card-title">Bottom: {{ outfit.bottom.name }}</h5>
+                    <img src="{{ outfit.bottom.image.url }}" class="card-img-top mb-2" alt="{{ outfit.bottom.name }}">
+                    {% endif %}
+                    
+                    {% if outfit.dress %}
+                    <h5 class="card-title">Dress: {{ outfit.dress.name }}</h5>
+                    <img src="{{ outfit.dress.image.url }}" class="card-img-top mb-2" alt="{{ outfit.dress.name }}">
+                    {% endif %}
+                    
+                    <h5 class="card-title">Shoe: {{ outfit.shoe.name }}</h5>
+                    <img src="{{ outfit.shoe.image.url }}" class="card-img-top mb-2" alt="{{ outfit.shoe.name }}">
+                    
+                    <h5 class="card-title">Accessory: {{ outfit.accessory.name }}</h5>
+                    <img src="{{ outfit.accessory.image.url }}" class="card-img-top" alt="{{ outfit.accessory.name }}">
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No outfits could be generated from your wardrobe items.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

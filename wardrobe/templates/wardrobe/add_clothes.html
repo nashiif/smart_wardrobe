@@ -1,0 +1,27 @@
+{% extends 'wardrobe/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Add New Clothing Item</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_name" class="form-label">Name</label>
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            <label for="id_category" class="form-label">Category</label>
+            {{ form.category }}
+        </div>
+        <div class="mb-3">
+            <label for="id_color" class="form-label">Color</label>
+            {{ form.color }}
+        </div>
+        <div class="mb-3">
+            <label for="id_image" class="form-label">Image</label>
+            {{ form.image }}
+        </div>
+        <button type="submit" class="btn btn-primary">Add Item</button>
+    </form>
+</div>
+{% endblock %}
